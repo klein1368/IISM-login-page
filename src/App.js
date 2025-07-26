@@ -1,4 +1,4 @@
-// App.js
+
 import React, { useState } from "react";
 import Card from "./Card";
 import "./index.css";
@@ -35,7 +35,7 @@ function App() {
     }
 
     if (editingId === null) {
-      // Create
+      // Creating Id
       setStudents([
         ...students,
         {
@@ -80,7 +80,6 @@ function App() {
 
   return (
     <>
-      {/* Navbar */}
       <nav className="navbar">
         <pre className="navbar-title">🏆 Inter IITM Sports Meet 2025</pre>
         <div className="navbar-links">
@@ -89,9 +88,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Main container */}
       <div className="container">
-        {/* Form Section */}
         <div className="form-section">
           <form className="form" onSubmit={handleSubmit}>
             <h2>Registration Form</h2>
@@ -186,7 +183,6 @@ function App() {
           </form>
         </div>
 
-        {/* Cards Section */}
         <div className="cards-section">
           <h2 className="participants-title">Registered Participants</h2>
           {students.length === 0 ? (
