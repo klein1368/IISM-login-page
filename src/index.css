@@ -1,0 +1,219 @@
+/* Reset and global */
+body {
+  font-family: Segoe UI, Arial, sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #164477;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  z-index: 10;
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar-links a{
+  margin: 25px;
+}
+
+/* Container with margin to avoid navbar overlap */
+.container {
+  max-width: 1280px;
+  margin: 92px auto 40px auto; /* space for navbar + bottom padding */
+  display: flex;
+  gap: 2rem;
+  padding: 0 2vw;
+  box-sizing: border-box;
+  min-height: calc(100vh - 92px);
+}
+
+/* Form section on left */
+.form-section {
+  flex: 0 0 400px; /* fixed width */
+  max-width: 400px;
+}
+
+/* Form styling */
+.form {
+  background: #f1f6fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.form h2 {
+  margin-top: 0;
+}
+
+.form-field {
+  margin-bottom: 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  margin-bottom: 4px;
+}
+
+.form-field input,
+.form-field select {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+}
+
+.form-actions {
+  text-align: right;
+}
+
+.button {
+  background: #095C46;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.button-submit {
+  background: #095C46;
+}
+
+.button-edit {
+  background: orange;
+}
+
+.button-cancel {
+  background: gray;
+}
+
+.button-delete {
+  background: red;
+}
+
+/* Cards section on right */
+.cards-section {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Title above cards */
+.participants-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Cards grid like YouTube homepage videos*/
+/* Responsive grid with minimum width ~320px cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem 2rem;
+  width: 100%;
+  justify-content: center; /* center if few cards */
+}
+
+/* Card styling resembling YouTube video thumbnail cards */
+.card {
+  background: #fafcff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+  /* approximate YouTube video card aspect ratio (16:9) width ~320px height ~180px is too short for text,
+     so make height auto but min height for uniformity */
+  min-height: 220px;
+  cursor: default;
+}
+
+/* Card title styling */
+.card-title {
+  margin: 0 0 0.5rem;
+  color: #00539C;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Card content paragraphs */
+.card p {
+  margin: 0.1em 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  flex-grow: 1; /* fill space if needed */
+}
+
+/* Card actions - buttons aligned at bottom */
+.card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    margin: 112px auto 20px; /* More top margin on smaller screens */
+  }
+  .form-section, .cards-section {
+    max-width: 100%;
+    width: 100%;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    min-height: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    font-size: 1rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 0.7rem 4vw;
+    border-radius: 0 0 10px 10px;
+    gap: 0.3rem;
+  }
+  .container {
+    margin-top: 80px;
+    padding: 4vw;
+  }
+}
